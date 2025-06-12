@@ -128,7 +128,9 @@ int main(){
                     q.insert();
                     break;
                 }
-           
+                case '2':{
+                    break;
+                }
                
                
             }
