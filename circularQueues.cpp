@@ -1,20 +1,74 @@
+
+/** 
+ * @mainpage Documentation Circular Queues 
+ * 
+ * @section Introduction 
+ * Project ini merupakan project struktur data
+ * menggunakan struktur data queues dengan pendekatan circular arrays.
+ * 
+ * @section Operations
+ * project ini memiliki beberapa operasi antara lain:
+ * 1. insert
+ * 2. delete
+ * 3. display 
+ * 
+ * @section Cara Penggunaan 
+ * berikut beberapa menu yang bisa di gunakan:
+ * 1. en queue
+ * 2. de queue
+ * 3. display
+ * 4. exit 
+ * 
+ * @author Profil
+ * nama : (Luthfi alqorni) 
+ * nim : (20240140092)
+ * kelas : (B) 
+ * 
+ * @brief 
+ * @version 1.0 
+ * @date 2025-06-24 
+ * 
+ * @copyright {luthfi alqorni}@umy.ac.id (c) 2025
+ * 
+*/
+
+
+
+
+
 #include <iostream>
 using namespace std;
+/**
+ * @class Queues 
+ * @brief class ini operasi lengkap queues
+ */
 
-//CircularQueueArray_4NIMBelakang
 
 class Queues {
-    int FRONT, REAR, max = 5;
-    int queue_array[5];
+private:
+    int FRONT;  ///< variable private front untuk menyimpan posisi depan antrian
+    int REAR;   ///< variable private rear untuk menyimpan posisi belakang anterian 
+    int FRONT, REAR, max = 5;   ///< variable private max untuk menyimpan ukuran maximum antrian
+    int queue_array[5]; //< variable private queue_array untuk menyimpan element array 
 
 public:
+/**
+ * @brief Construct a new Queues object 
+ * set default queues null 
+ * with front = -1 and rear = -1
+ */
     Queues(){
         FRONT =-1;
         REAR = -1;
     }
 
+    /**
+     * @brief method untuk memasukan data dalam antrian 
+     * data di masukan dalam variable queue_array 
+     */
+
     void insert() {
-        int num;
+        int num;///< variable num untuk meyimpan nilai 
         cout << "Enter a number: ";
         cin >> num;
         cout << endl;
@@ -38,6 +92,11 @@ public:
 
     }
 
+    /**
+     * @brief method untuk menghapus data dalam antrian
+     * data di hapuskan dari dalam variable queue_array
+     */
+
     void remove () {
         //cek apakah antrian kosong
         if (FRONT == -1){
@@ -60,12 +119,15 @@ public:
         }
     }
 
-    
+       /**
+     * @brief method untuk menampilkan data dalam antrian
+     * data di tampilkan yang berada di dalam variable queue_array
+     */
 
 
     void display(){
-        int FRONT_position = FRONT;
-        int REAR_position = REAR;
+        int FRONT_position = FRONT;///< variable front_position untuk menandakan posisi element 
+        int REAR_position = REAR;///< variable rear_position untuk menandakan posisi element teraakhir
 
         //cek apakah antrian kosong
         if (FRONT == -1)  {
@@ -109,8 +171,8 @@ public:
 
 
 int main(){
-    Queues q;
-    char ch;
+    Queues q;///< objek untuk meneggunakan member yang ada pada class queues
+    char ch;///< variable ch untuk menyimpan pilihan pada menu yang diberikan 
 
     while (true){
         try{
